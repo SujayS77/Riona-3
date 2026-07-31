@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Diary from "./pages/Diary";
+import Timeline from "./pages/Timeline";
 
 export default function NotebookApp() {
   const [activePage, setActivePage] = useState("home");
@@ -12,24 +13,16 @@ export default function NotebookApp() {
     switch (activePage) {
       case "home":
         return <Home />;
-
       case "diary":
         return <Diary />;
-
       case "timeline":
-        return (
-          <div className="flex h-full items-center justify-center">
-            <h1 className="font-[Playfair_Display] text-5xl text-purple-700">Our Timestamp</h1>
-          </div>
-        );
-
+        return <Timeline />;
       case "riona":
         return (
           <div className="flex h-full items-center justify-center">
             <h1 className="font-[Playfair_Display] text-5xl text-purple-700">Eh, srsly?</h1>
           </div>
         );
-
       default:
         return <Home />;
     }
